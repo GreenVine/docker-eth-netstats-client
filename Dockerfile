@@ -11,7 +11,8 @@ RUN apk add --update --no-cache --virtual .build-deps git \
 		&& git clone https://github.com/dan-turner/eth-net-intelligence-api . \
     && npm install --force \
     && npm cache clean --force  \
-    && apk del .build-deps
+    && apk del .build-deps \
+    && chown -R node:node ${APP_DIR}
 
 # Set default docker user to node (provided by base image).
 USER node
