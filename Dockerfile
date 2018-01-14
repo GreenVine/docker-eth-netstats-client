@@ -8,7 +8,7 @@ ENV NODE_ENV "production"
 WORKDIR $APP_DIR
 
 RUN apk add --update --no-cache --virtual .build-deps git \
-		&& git clone https://github.com/dan-turner/eth-net-intelligence-api . \
+		&& git clone https://github.com/GreenVine/eth-net-intelligence-api . \
     && npm install --force \
     && npm cache clean --force  \
     && apk del .build-deps \
